@@ -1,0 +1,6 @@
+SELECT b.author, count(b.book_id) as pop
+FROM BOOKS as b left join CHECKED_OUT as c
+On b.book_id = c.book_id
+GROUP BY b.author
+ORDER BY pop DESC
+LIMIT 5
